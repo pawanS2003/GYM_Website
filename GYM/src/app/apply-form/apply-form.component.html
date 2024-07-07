@@ -1,0 +1,98 @@
+<div class="container">
+    <header>
+      <img src="./images/img2.png" alt="Fitness Gym Logo">
+    </header>
+  
+    <form *ngIf="!formSubmitted" [formGroup]="gymForm" (ngSubmit)="onSubmit()">
+      <div class="section">
+        <h2>MEMBERSHIP REGISTRATION</h2>
+        <div class="form-row">
+          <div class="form-group">
+            <h6>FIRST NAME</h6>
+            <input type="text" formControlName="firstName" required placeholder="First Name">
+          </div>
+          <div class="form-group">
+            <h6>LAST NAME</h6>
+            <input type="text" formControlName="lastName" required placeholder="Last Name">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <h6>EMAIL</h6>
+            <input type="email" id="email" formControlName="email" required placeholder="sample@email.com">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <h6>GENDER</h6>
+            <div class="gender-options">
+              <label id="gender"><input type="radio" formControlName="gender" value="male"> Male</label>
+              <label id="gender"><input type="radio" formControlName="gender" value="female"> Female</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <h6>PHOTO</h6>
+            <div class="photo-upload">
+              <input type="file" (change)="onFileChange($event)">
+              <img *ngIf="photoPreview" [src]="photoPreview" alt="Photo Preview">
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="section">
+        <h6>APPLICATION FEE</h6>
+        <div class="form-row">
+          <label><input type="radio" formControlName="fee" value="1200"> 12 Months $1200</label>
+          <label><input type="radio" formControlName="fee" value="2200"> 24 Months (You save $200) $2200</label>
+        </div>
+      </div>
+  
+      <div class="section">
+        <h6>Total: {{ total }} USD</h6>
+      </div>
+  
+      <div class="section">
+        <h6>Credit Card</h6>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="ccName">Name</label>
+            <input type="text" id="ccName" formControlName="ccName" required>
+          </div>
+          <div class="form-group">
+            <label for="ccSurname">Surname</label>
+            <input type="text" id="ccSurname" formControlName="ccSurname" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <input type="text" formControlName="ccNumber" placeholder="Credit Card Number" required>
+          </div>
+          <div class="form-group">
+            <input type="text" formControlName="ccExpiry" placeholder="MM/YY" required>
+          </div>
+          <div class="form-group">
+            <input type="text" formControlName="ccCVV" placeholder="CVV" required>
+          </div>
+        </div>
+      </div>
+  
+      <div class="form-row">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  
+    <div *ngIf="formSubmitted" class="receipt">
+      <h1>Receipt</h1>
+      <p><strong>First Name:</strong> {{ receiptData.firstName }}</p>
+      <p><strong>Last Name:</strong> {{ receiptData.lastName }}</p>
+      <p><strong>Email:</strong> {{ receiptData.email }}</p>
+      <p><strong>Gender:</strong> {{ receiptData.gender }}</p>
+      <p><strong>Application Fee:</strong> {{ receiptData.fee }} USD</p>
+      <p><strong>Total:</strong> {{ total }} USD</p>
+      <button (click)="printReceipt()">Print Receipt</button>
+    </div>
+  </div>
+  

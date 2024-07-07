@@ -1,0 +1,50 @@
+<div class="navbar">
+    <div class="logo">S-FIT GyM</div>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="contact">Contact</a></li>
+      <li><a href="#">Help</a></li>
+    </ul>
+  </div>
+  <div class="container">
+    <!-- Login Form -->
+    <form class="form-box login" *ngIf="activeForm === 'login'" [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+      <div class="wrapper">
+        <div class="login-container">
+          <h2>Login</h2>
+          <div class="input-box">
+            <input type="email" formControlName="email" placeholder="Email">
+          </div>
+          <div class="input-box">
+            <input type="password" formControlName="password" placeholder="Password">
+          </div>
+          <div class="remember-forgot">
+            <label><input type="checkbox">Remember me</label>
+            <a href="#">Forgot Password?</a>
+          </div>
+          <button type="submit" class="btn">Login</button>
+          <p (click)="toggleForm('register')" class="highlighted">Don't have an account? <span>Register</span></p>
+        </div>
+      </div>
+    </form>
+    <!-- Register Form -->
+    <form class="form-box login" *ngIf="activeForm === 'register'" [formGroup]="registerForm" (ngSubmit)="register()">
+      <div class="wrapper">
+        <div class="login-container">
+          <h2>Register</h2>
+          <div class="input-box">
+            <input type="text" formControlName="username" placeholder="Username">
+          </div>
+          <div class="input-box">
+            <input type="email" formControlName="email" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+          </div>
+          <div class="input-box">
+            <input type="password" formControlName="password" placeholder="Password">
+          </div>
+          <button type="submit" class="btn">Register</button>
+          <p (click)="toggleForm('login')" class="highlighted">Already have an account? <span>Login</span></p>
+        </div>
+      </div>
+    </form>
+  </div>
+  

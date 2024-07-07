@@ -1,0 +1,182 @@
+.container {
+    background-image: url(/images/img3.jpg);
+    display: flex;
+    width: 100%;
+    height: 641px;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Impact', sans-serif; /* Impact फ़ॉन्ट का उपयोग करें */
+}
+
+.content {
+    color: #F0F8FF; /* हल्का नीला रंग */
+}
+
+.content h1 {
+    font-size: 36px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: #4B0082; /* लैवेंडर रंग */
+}
+
+.content h5 {
+    font-weight: 100;
+    font-size: 24px;
+    color: #edabdf; /* मधुर बैगेंडी रंग */
+}
+
+.button {
+    display: inline-block;
+    background-color: #20B2AA; /* लाइट टर्कोइज़ रंग */
+    border: none;
+    color: rgb(203, 17, 17);
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 900;
+    border-radius: 10px;
+}
+
+.button a {
+    text-decoration: none;
+}
+.button:hover {
+    background-color: #384646; /* मिडियम टर्कोइज़ रंग */
+}
+
+@media (max-width: 768px) {
+    .container {
+        height: auto;
+        min-height: 400px;
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+    .button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+/* Base styles */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #000;
+    font-family: Arial, sans-serif;
+    flex-direction: column;
+}
+
+.card-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1300px;
+    background-color: rgb(207, 222, 217);
+    background-size: cover;
+}
+
+.card {
+    width: 100%;
+    perspective: 1000px;
+}
+
+.card-content {
+    display: flex;
+    background: #333;
+    color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-content.reverse {
+    flex-direction: row-reverse;
+    text-decoration: none;
+}
+
+.card:hover .card-content {
+    transform: rotateY(360deg);
+}
+
+.card-image {
+    flex: 1;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px 0 0 15px;
+}
+
+.card-content.reverse .card-image img {
+    border-radius: 0 15px 15px 0;
+}
+
+.card a{
+    text-decoration: none;
+}
+
+.card-text {
+    flex: 2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.card-text h1 {
+    font-weight: 900;
+    color: rgb(166, 144, 144);
+}
+
+.card-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(45deg, red, green, blue); */
+    mix-blend-mode: screen;
+    opacity: 0.7;
+    animation: rgbEffect 3s linear infinite;
+    border-radius: 15px;
+}
+
+@keyframes rgbEffect {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .card-content {
+        flex-direction: column;
+    }
+    .card-content.reverse {
+        flex-direction: column;
+    }
+    .card-image img,
+    .card-content.reverse .card-image img {
+        border-radius: 15px 15px 0 0;
+    }
+}

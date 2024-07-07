@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <header class="header">
+      <h1>Shop in style</h1>
+      <p>With this shop homepage template</p>
+    </header>
+    <div class="products">
+      <div *ngFor="let product of products" class="product-card">
+        <img [src]="product.imageUrl" alt="{{product.name}}">
+        <div class="product-info">
+          <h5>{{ product.name }}</h5>
+          <p *ngIf="product.oldPrice" class="old-price">{{ product.oldPrice }}</p>
+          <p class="price">{{ product.price }}</p>
+          <div *ngIf="product.rating">
+            <span *ngFor="let star of [].constructor(product.rating)">&starf;</span>
+          </div>
+          <button>Add to cart</button>
+          <span *ngIf="product.sale" class="sale-badge">Sale</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  

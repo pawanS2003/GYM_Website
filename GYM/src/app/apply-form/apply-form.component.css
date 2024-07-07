@@ -1,0 +1,172 @@
+/* Existing CSS */
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  /* Add these styles for the photo upload */
+  .photo-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .photo-upload img {
+    max-width: 100px;
+    max-height: 100px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  header img {
+    width: 150px;
+    height: auto;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .section {
+    margin-bottom: 20px;
+  }
+  
+  h6, h2 {
+    border-bottom: 2px solid #ff9900;
+    padding-bottom: 5px;
+    color: #0056b3;
+    margin-top: 0;
+  }
+  
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .form-group {
+    flex: 1;
+    margin: 10px;
+    /* display:inline-flex; */
+  }
+  
+  #line{
+    display: inline-flex;
+  }
+  
+  label {
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .gender-options{
+    display: flex;
+  }
+  
+  #gender{
+    display: flex;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-right: 20px;
+    width: 10em;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="radio"],
+  input[type="number"],
+  input[type="date"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    background-color: #28a745;
+    color: white;
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  button:hover {
+    opacity: 0.9;
+  }
+  
+  @media (max-width: 600px) {
+    .form-row {
+      flex-direction: column;
+    }
+  
+    .form-group {
+      margin: 5px 0;
+    }
+  
+    h2 {
+      font-size: 18px;
+    }
+  
+    input,
+    button {
+      font-size: 14px;
+    }
+  }
+  
+  /* Add styles for the receipt */
+  .receipt {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  .receipt h1 {
+    border-bottom: 2px solid #ff9900;
+    padding-bottom: 5px;
+    color: #0056b3;
+  }
+  
+  .receipt p {
+    margin: 10px 0;
+  }
+  
+  .receipt button {
+    margin-top: 20px;
+  }
+  
